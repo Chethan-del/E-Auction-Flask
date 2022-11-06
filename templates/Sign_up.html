@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+</head>
+<style>
+    form {
+        font-family: "Roboto", sans-serif;
+        border: 2px solid black;
+        text-align: center;
+        border-radius: 40px;
+        margin-left: 250px;
+        margin-top: 10px;
+        font-size: 18px;
+        background-color: #f2f2f2;
+        width: max-content;
+        padding-bottom: 30px;
+        background-color: rgba(121, 90, 179, 0.911);
+        box-shadow: 10px 10px rgba(81, 54, 131, 0.911);
+    }
+    
+    a:link,
+    a:visited {
+        color: white;
+        background-color: rgb(105, 0, 211);
+        Text-align: center;
+        border: 2px solid black;
+        margin: 20px;
+        padding: 15px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: white;
+        background-color: rgb(208, 178, 211);
+        text-decoration: none;
+        font-size: 18px;
+        transition-duration: 0.5s;
+    }
+    
+    input,
+    select {
+        font-size: larger;
+        text-align: center;
+        padding: 7px;
+        width: 500px;
+        margin: 10px;
+        border-radius: 40px;
+    }
+</style>
+
+<body>
+    <h1 style="text-align: center;">>>>>>>>> Sign up
+        <<<<<<<<</h1>
+            <form method="POST">
+                <h1>Please fill the following.</h1>
+                <span>
+          
+          <input  type="text" placeholder="First name" id="First Name" name="First_name" required >
+          <input  type="text"  placeholder="Last name" id="Last Name" name="Last_name" required  ><br>
+          <input type="tel" id="phone" placeholder="Phone_number" name="phone" pattern="[0-9]{10}" required>
+          <input type="text" id="Username" placeholder=" Enter username" name="User_name" required><br>
+          <input type="email" placeholder="Enter your mail address" id="Mail" name="mail" required><br>
+          <input type="password" placeholder="Enter password" id="Password" name="password" required>
+
+        </span>
+                <br>
+                <select name="gender" id="Gender">
+          <option>Gender</option>
+          <option value="M">Male </option>
+          <option value="F">Female</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select><br><br>
+                <input type="submit" value="Sign up">
+                <input type="reset" value="Reset"><br/><br/>
+                <a href="{{url_for('home')}}">Cancel</a>
+            </form>
+</body>
+
+</html>

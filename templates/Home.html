@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>E-AUCTION</title>
+
+</head>
+<style>
+    a {
+        /* border: 2px solid black; */
+        text-decoration: none;
+        font-size: 18px;
+        background-color: rgb(105, 0, 211);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border-radius: 25px;
+        /* margin: 20px; */
+        width: 500px;
+    }
+    
+    button:hover {
+        color: black;
+        background-color: rgb(208, 178, 211);
+        font-size: 18px;
+    }
+    
+    .LOGO {
+        color: black;
+        border: 5px solid black;
+        border-radius: 25px;
+        background-color: antiquewhite;
+        font-family: 150%;
+        text-align: center;
+        margin: 10px;
+        padding: 70px;
+    }
+    
+    button {
+        width: 650px;
+        margin-left: 50px;
+        padding: 10px;
+        background-color: rgb(105, 0, 211);
+        border-radius: 25px;
+    }
+    
+    h1 {
+        background-color: white;
+        padding: 5px;
+        width: max-content;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    img {
+        width: 250px;
+        height: 210px;
+    }
+    
+    h3,
+    h2 {
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bolder;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-columns: repeat(5, 300px);
+        border: 2px solid black;
+        align-items: center;
+        column-gap: 15px;
+        border-radius: 25px;
+        width: fit-content;
+    }
+    
+    .container2 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border: 2px solid black;
+        align-items: center;
+        column-gap: 2px;
+        border-radius: 25px;
+        text-align: center;
+        width: fit-content;
+    }
+    
+    .category-grid {
+        /* border: 2px solid black; */
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <!-- {% with messages = get_flashed_messages() %} {% if messages %} {% for msg in messages %}
+    <p>{{msg}}</p>
+    {% endfor %} {% endif %} {% endwith %} -->
+    <div class="LOGO" style="background-image:url('static/coverHome.png');">
+        <h1>WELCOME TO E-AUCTION</h1>
+    </div><br><br>
+    <span><button><a href="{{url_for('sign_up')}}">Sign in</a></button></span>
+    <span><button><a href="{{url_for('login')}}">Login</a></button></span>
+    <br>
+    <h3>An e-auction is a transaction between sellers (the auctioneers) and bidders (suppliers in the business to business scenarios) that takes place on an electronic marketplace/ internet. It is a popular method for buying and selling products and services.
+        Online Auction System s helps to customer to sell and buy product in best price. It is developed with the objective of making the system reliable, easier and fast. This application is used to sell the anything on the website from house. This application
+        is used to sell the anything on the website from house. It developed with the objective of making the system reliable, easier and fast. The application is made as simple as surfing a website. There by non-technical persons can also interact with
+        the processing on the application easily.</h3><br><br><br><br>
+    <h2>>>>>>>>>Categories we host
+        <<<<<<<<</h2>
+            <div class="container">
+                <div class="category-grid">
+                    <img src="static/Mobile_clip.png" alt="">
+                    <h3>Moblie</h3>
+                </div>
+                <div class="category-grid">
+                    <img src="static/laptop_clip.png" alt="">
+                    <h3>Laptop</h3>
+                </div>
+                <div class="category-grid">
+                    <img src="static/Book_clip.png" alt="">
+                    <h3>Books</h3>
+                </div>
+                <div class="category-grid">
+                    <img src="static/art_clip.png" alt="">
+                    <h3>Digital art</h3>
+                </div>
+                <div class="category-grid">
+                    <img src="static/home-appliance.jpg" alt="">
+                    <h3>Home appliance</h3>
+                </div>
+            </div><br><br><br>
+            <h2>>>>>>>>>Features we offer
+                <<<<<<<<</h2>
+                    <div class="container2">
+                        <div class="category-grid">
+                            <img src="static/sell_clip.jpg" alt="" style="border: 2px solid black;">
+                            <h3>SELL</h3>
+                        </div>
+                        <h3>Start selling your product online at your desired price.select the last date of your auction. The highest bid will automatically selected and you will recive the payments from the buyer. for more information check your Sellingtab.
+                        </h3>
+                        <div class="category-grid">
+                            <img src="static/bid_clip.png" alt="" style="border: 2px solid black;">
+                            <h3>BID</h3>
+                        </div>
+                        <h3>Start bidding on your desired products at your desired price.Bids will be recorded till the last date.If your bid is the highest on the product CONGRATS!! you won the bid.For more information on bidding check Bidding tab.</h3>
+                    </div><br><br><br><br><br><br>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<d>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border: 2px solid black;
+        background-color: rgba(121, 90, 179, 0.911);
+        box-shadow: 10px 10px rgba(81, 54, 131, 0.911);
+        padding: 10px;
+        border-radius: 20px;
+        border-spacing: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    th {
+        border: 2px solid black;
+        border-radius: 20px;
+        padding: 20px;
+        background-color: aliceblue;
+        width: 300px;
+        font-weight: 600;
+        font-size: x-large;
+    }
+    
+    td {
+        border: 2px solid black;
+        border-radius: 20px;
+        padding: 10px;
+        background-color: aliceblue;
+        text-align: center;
+    }
+    
+    a {
+        text-decoration: none;
+        font-size: large;
+        color: black;
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 20px;
+        margin-left: 45%;
+        background-color: rgba(121, 90, 179, 0.911);
+    }
+    
+    a:hover {
+        color: black;
+        background-color: rgb(208, 178, 211);
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <h2 style="text-align: center;">>>>>>>>> PAYMENTS DONE
+        <<<<<<<<</h2>
+            <table>
+                <caption>
+                    <h2>Payments details</h2>
+                </caption>
+                <tr>
+                    <th>Payment ID</th>
+                    <th>Product ID</th>
+                    <th>Amount</th>
+                </tr>
+                {% set i = 0 %}
+                {% for details in payment_details %}
+                <tr>
+                    <td>{{details[0]}}</td>
+                    <td>{{details[1]}}</td>
+                    <td>{{details[2]}}</td>
+                </tr>
+                {% set i = i + 1 %}
+                {% endfor %}
+            </table><br><br>
+            <div class="back">
+                <a href="{{url_for('accounts')}}">Back to Account</a>
+            </div>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<d>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border: 2px solid black;
+        background-color: rgba(121, 90, 179, 0.911);
+        box-shadow: 10px 10px rgba(81, 54, 131, 0.911);
+        padding: 10px;
+        border-radius: 20px;
+        border-spacing: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    th {
+        border: 2px solid black;
+        border-radius: 20px;
+        padding: 20px;
+        background-color: white;
+        width: 300px;
+        font-weight: 600;
+        font-size: x-large;
+    }
+    
+    td {
+        border: 2px solid black;
+        border-radius: 20px;
+        padding: 10px;
+        background-color: white;
+        text-align: center;
+    }
+    
+    .back {
+        font-size: large;
+        color: black;
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 20px;
+        margin-left: 45%;
+        margin-right: 45%;
+        background-color: rgba(121, 90, 179, 0.911);
+        text-align: center;
+    }
+    
+    .back:hover {
+        color: black;
+        background-color: rgb(208, 178, 211);
+        text-decoration: none;
+    }
+    
+    .AA:hover {
+        color: black;
+        background-color: rgb(208, 178, 211);
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <h2 style="text-align: center;">>>>>>>>> PAYMENTS DUE
+        <<<<<<<<</h2>
+            <table class="Pay">
+                <caption>
+                    <h2>Payment details
+                    </h2>
+                </caption>
+                <tr>
+                    <th>product ID</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+                {% for details in payment_details %}
+                <tr>
+                    <td>{{details[0]}}</td>
+                    <td>{{details[1]}}</td>
+                    <td class="AA"><a href="{{url_for('payment_tab', prod_id = details[0], price = details[1])}}" style="color: black;text-decoration:none;">Pay now</a></td>
+                </tr>
+                {% endfor %}
+            </table><br><br>
+            <div class="back">
+                <a href="{{url_for('accounts')}}" style="color: black;text-decoration: none;">Back to Account</a>
+            </div>
+</body>
+
+</html>

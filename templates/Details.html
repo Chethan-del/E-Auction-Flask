@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY details</title>
+</head>
+<style>
+    table {
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        border-spacing: 30px;
+        margin-top: 20px;
+        background-color: rgba(121, 90, 179, 0.911);
+        box-shadow: 10px 10px rgba(81, 54, 131, 0.911);
+    }
+    
+    td,
+    th {
+        border: 1px solid black;
+        padding: 10px;
+        background-color: white;
+        border-radius: 10px;
+        width: max-content;
+        font-size: x-large;
+    }
+    
+    button {
+        border: 2px solid black;
+        font-size: 18px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 25px;
+        cursor: pointer;
+        background-color: blueviolet;
+        margin-left: 45%;
+    }
+    
+    button:hover {
+        background-color: rgb(191, 125, 197);
+        color: black;
+    }
+    
+    caption {
+        font-size: xx-large;
+        font-weight: 700;
+    }
+</style>
+
+<body>
+    <table>
+        <caption>>>>>>>>> My details
+            <<<<<<<<</caption>
+                <tr>
+                    <th>First Name</th>
+                    <td>{{details[0][2]}}</td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td>{{details[0][3]}}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>{{details[0][5]}}</td>
+                </tr>
+                <tr>
+                    <th>Phone number</th>
+                    <td>{{details[0][1]}}</td>
+                </tr>
+                <tr>
+                    <th>User ID</th>
+                    <td>{{details[0][0]}}</td>
+                </tr>
+                <tr>
+                    <th>Your Username</th>
+                    <td>{{details[0][4]}}</td>
+                </tr>
+    </table><br>
+    <div><a href="{{url_for('accounts')}}"><button type="button"> Back to accounts</button></a></div>
+
+</body>
+
+</html>

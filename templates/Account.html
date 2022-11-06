@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+</head>
+<style>
+    form {
+        background-color: rgba(121, 90, 179, 0.911);
+        box-shadow: 10px 10px rgba(81, 54, 131, 0.911);
+        height: auto;
+        border: 2px solid black;
+        border-radius: 25px;
+        width: 700px;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    
+    button {
+        border: 2px solid black;
+        font-size: 18px;
+        width: 50%;
+        padding: 10px;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: rgb(191, 125, 197);
+        color: black;
+    }
+</style>
+
+<body>
+    <h1 style="text-align: center;">>>>>>>>> Accounts
+        <<<<<<<<</h1>
+            <div>
+                <form>
+                    <br><br>
+                    <div><a href="{{url_for('details')}}"><button type="button"> Details</button></a></div><br><br>
+                    <div><a href="{{url_for('sold')}}"><button type="button"> Selling</button></a></div><br><br>
+                    <div><a href="{{url_for('bidded_inbid')}}"><button type="button"> Your Biddings</button></a></div><br><br>
+                    <div><a href="{{url_for('bidded')}}"><button type="button">Bid won</button></a></div><br><br>
+                    <div><a href="{{url_for('sell_now')}}"><button type="button">Sell Now</button></a></div><br><br>
+                    <div><a href="{{url_for('payments')}}"><button type="button">Payment Due</button></a></div><br><br>
+                    <div><a href="{{url_for('payments_done')}}"><button type="button"> Payments Done</button></a></div><br><br>
+                    <div><a href="{{url_for('logout')}}"><button type="button">logout</button></a></div><br><br>
+                </form>
+            </div>
+
+</body>
+
+</html>

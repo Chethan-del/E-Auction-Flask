@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>E-AUCTION</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+     ::-webkit-scrollbar {
+        width: 10px;
+    }
+    /* Track */
+    
+     ::-webkit-scrollbar-track {
+        /* background: linear-gradient(to right, purple, violet);    */
+        padding: 5px;
+    }
+    /* Handle */
+    
+     ::-webkit-scrollbar-thumb {
+        background: rgb(105, 0, 211);
+        border-radius: 20px;
+    }
+    /* Handle on hover */
+    
+     ::-webkit-scrollbar-thumb:hover {
+        background: rgb(208, 178, 211);
+    }
+    /* body {
+    background-image: linear-gradient(to right, purple, violet);
+} */
+    
+    .LOGO {
+        color: black;
+        border: 5px solid black;
+        border-radius: 25px;
+        background-color: antiquewhite;
+        font-family: 150%;
+        text-align: center;
+        margin: 10px;
+        padding: 70px;
+    }
+    
+    h1 {
+        /* border: 1px solid black; */
+        background-color: white;
+        padding: 5px;
+        width: max-content;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    a {
+        border: 2px solid black;
+        text-decoration: none;
+        font-size: 18px;
+        background-color: rgb(105, 0, 211);
+        color: white;
+        width: 50%;
+        text-align: center;
+        padding: 10px;
+        border-radius: 25px;
+        margin: 20px;
+    }
+    
+    a:hover {
+        color: black;
+        background-color: rgb(208, 178, 211);
+        font-size: 18px;
+    }
+    
+    input[type=text] {
+        width: 75%;
+        margin: 10px;
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 25px;
+        font-size: 16px;
+        background-color: rgb(105, 0, 211);
+        padding: 15px 25px;
+    }
+    
+    input:hover {
+        background-color: rgb(208, 178, 211);
+        color: black;
+    }
+    
+     ::placeholder {
+        color: white;
+    }
+    
+    .container {
+        border: 5px solid black;
+        border-radius: 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        place-items: center;
+        background-color: white;
+        height: max-content;
+    }
+    
+    .grid {
+        display: block;
+        margin: 20px;
+        text-align: center;
+        border: 3px solid black;
+        border-radius: 20px;
+        padding-bottom: 30px;
+        padding: 10px;
+        background-color: antiquewhite;
+    }
+    
+    .grid:hover {
+        background-color: rgb(229, 128, 255);
+        border: 3px dotted black;
+    }
+    
+    .view:link {
+        text-decoration: none;
+        border: 2px solid black;
+        width: 30%;
+        margin: 0 auto;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    
+    .view:hover {
+        text-decoration: none;
+        background-color: rgb(208, 178, 211);
+        font-size: 20px;
+    }
+    
+    .Bid {
+        text-decoration: none;
+        border: 2px solid black;
+        width: 30%;
+        margin: 15px;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: rgb(105, 0, 211);
+        color: white;
+    }
+    
+    .Bid:hover {
+        text-decoration: none;
+        background-color: rgb(208, 178, 211);
+        font-size: 20px;
+    }
+    
+    img {
+        width: 200px;
+        height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid white;
+        float: left;
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+    
+    .pro_table {
+        border: 2px solid black;
+        padding: 13px;
+        text-align: center;
+        width: 1000px;
+        border-spacing: 10px;
+        border-radius: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        /* float: right; */
+        margin-bottom: 30px;
+    }
+    
+    th {
+        border: 2px solid black;
+        padding: 13px;
+        text-align: center;
+        width: 900px;
+        border-radius: 20px;
+        background-color: rgb(105, 0, 211);
+        font-size: larger;
+        color: white;
+    }
+    
+    td {
+        border: 1px solid black;
+        padding: 13px;
+        text-align: center;
+        width: 900px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: x-large;
+    }
+    
+    caption {
+        font-size: x-large;
+        font-weight: 700;
+    }
+</style>
+
+<body>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for msg in messages %}
+    <p>{{msg}}</p>
+    {% endfor %} {% endif %} {% endwith %}
+    <div class="LOGO" style="background-image:url('static/coverHome.png');">
+        <h1>WELCOME TO E-AUCTION</h1>
+    </div><br><br>
+    <span><a href="{{url_for('sell_now')}}">sell now</a></span>
+    <span><a href="{{url_for('accounts')}}">My Account</a></span>
+    <span>
+        <input type="text" name="search" placeholder="Search.."><br>
+    </span>
+    <span>
+        <table >
+            <img src="static/Mobile_clip.png">
+        </table>
+        <table class="pro_table">
+            <caption>>>>>>> Bids on Mobiles <<<<<<</caption>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Last date</th>
+            <th><i class="fa fa-eye" style="font-size:35px"></i></th>
+        </tr>
+            {% if mobile != (()) %}
+                 {% for i in range(mobile|length) %}
+                    {% set j = 0 %}
+        <tr>
+            <td>{{mobile[i][j]}}</td>
+            {% set j = j + 1 %}
+            <td>{{mobile[i][j]}}</td>
+            {% set j = j + 1 %}
+            <td>{{mobile[i][j]}}</td>
+            <td  style="border: 2px solid white;"><a href="{{url_for('product_view', id = mobile[i][0])}}">click here</a></td>
+        </tr>
+                 {% endfor %}
+            {% else %}
+            <tr>
+            <td>{{'---'}}</td>
+            <td>{{'---'}}</td>
+            <td>{{'---'}}</td>
+            <td  style="border: 2px solid white;">{{'---'}}</td>
+        </tr>
+            {% endif %}
+    </table> 
+    </span>
+    <span>
+        <table >
+            <img src="static/Book_clip.png">
+        </table>
+        <table  class="pro_table">
+            <caption>>>>>>> Bids on Books <<<<<<</caption>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Last date</th>
+            <th><i class="fa fa-eye" style="font-size:35px"></th>
+        </tr>
+        {% if book != (()) %}
+                 {% for i in range(book|length) %}
+                    {% set j = 0 %}
+        <tr>
+            <td>{{book[i][j]}}</td>
+            {% set j = j + 1 %}
+            <td>{{book[i][j]}}</td>
+            {% set j = j + 1 %}
+            <td>{{book[i][j]}}</td>
+            <td  style="border: 2px solid white;"><a href="{{url_for('product_view', id = book[i][0])}}">click here</a></td>
+        </tr>
+                 {% endfor %}
+            {% else %}
+             <tr>
+            <td>{{'---'}}</td>
+            <td>{{'---'}}</td>
+            <td>{{'---'}}</td>
+            <td  style="border: 2px solid white;">{{'---'}}</td>
+        </tr>
+            {% endif %}
+    </table> 
+    </span>
+    <span>
+        <table >
+            <img src="static/laptop_clip.png">
+        </table>
+        <table  class="pro_table">
+            <caption>>>>>>> Bids on Laptops <<<<<<</caption>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Last date</th>
+            <th><i class="fa fa-eye" style="font-size:35px"></th>
+        </tr>
+        {% if laptop != (()) %}
+                 {% for i in range(laptop|length) %}
+                    {% set j = 0 %}
+        <tr>
+            <td>{{laptop[i][j]}}</td>
+            {% set j = j + 1 %}
+            <td>{{laptop[i][j]}}</td>
+            {% set j = j + 1 %}
+            <td>{{laptop[i][j]}}</td>
+            <td  style="border: 2px solid white;"><a href="{{url_for('product_view', id = laptop[i][0])}}">click here</a></td>
+        </tr>
+                 {% endfor %}
+            {% else %}
+             <tr>
+            <td>{{'---'}}</td>
+            <td>{{'---'}}</td>
+            <td>{{'---'}}</td>
+            <td  style="border: 2px solid white;">{{'---'}}</td>
+        </tr>
+       {% endif %}
+        
+    </table> 
+    </span>
+    <span>
+        <table >
+            <img src="static/art_clip.png">
+        </table>
+        <table  class="pro_table">
+            <caption>>>>>>> Bids on Digital art <<<<<<</caption>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Last date</th>
+            <th><i class="fa fa-eye" style="font-size:35px"></th>
+        </tr>
+        {% if art != (()) %}
+                 {% for i in range(art|length) %}
+                    {% set j = 0 %}
+        <tr>
+            <td>{{art[i][j]}}</td>
+            {% set j = j + 1 %}
+            <td>{{art[i][j]}}</td>
+            {% set j = j + 1 %}
+            <td>{{art[i][j]}}</td>
+            <td  style="border: 2px solid white;"><a href="{{url_for('product_view', id = art[i][0])}}">click here</a></td>
+        </tr>
+                 {% endfor %}
+        {% else %}
+                <tr>
+                    <td>{{'---'}}</td>
+                    <td>{{'---'}}</td>
+                    <td>{{'---'}}</td>
+                    <td  style="border: 2px solid white;">{{'---'}}</td>
+                </tr>
+        {% endif %}
+    </table> 
+    </span>
+</body>
+
+</html>

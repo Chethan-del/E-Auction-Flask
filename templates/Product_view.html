@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product view</title>
+    <link rel="stylesheet" href="pro_view.css">
+</head>
+
+<style>
+    a {
+    border: 2px solid black;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: blueviolet;
+    color: white;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    margin-left: 700px;
+}
+
+a:hover {
+    color: black;
+    background-color: rgb(208, 178, 211);
+    font-size: 18px;
+}
+
+table {
+    border-spacing: 5px;
+    margin-top: 10px;
+    margin-left: 100px;
+    /* background-color: rgba(121, 90, 179, 0.911); */
+    /* box-shadow: 10px 10px rgba(81, 54, 131, 0.911); */
+    /* border: 2px solid black; */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 300px 1100px;
+    width: max-content;
+    margin-left: 40px;
+    column-gap: 40px;
+}
+
+.grid1 {
+    margin: 20px;
+    margin-left: 30px;
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+.grid2 {
+    font-size: x-large;
+    padding: 5px;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 1000px;
+    background-color: aliceblue;
+}
+
+button {
+    border: 2px solid black;
+    font-size: 18px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: blueviolet;
+}
+
+button:hover {
+    background-color: rgb(191, 125, 197);
+    color: black;
+}
+
+input {
+    border-radius: 20px;
+    width: 200px;
+    padding: 20px;
+    background-color: antiquewhite;
+    border: 2px solid red;
+    margin: 20px;
+    font-size: large;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.pid {
+    border: 5px solid black;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+.curr {
+    border: 5px solid green;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+    background-color: rgb(24, 255, 173);
+}
+
+.date {
+    border: 5px solid black;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 50px;
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+th {
+    font-size: x-large;
+}
+
+.B {
+    background-color: rgba(121, 90, 179, 0.911);
+    box-shadow: 10px 10px rgba(81, 54, 131, 0.911);
+    padding: 10px;
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+</style>
+<body>
+    <p style="font-size:35px;margin-left:110px;text-decoration: underline;">{{product_details[0][1]}}</p>
+    <!-- <p style="font-size:35px;margin-left:110px;text-decoration: underline;">Digital Art of mountain</p> -->
+    <div class="B">
+        <div class="container">
+            <div class="grid1">
+                <img src="{{ url_for('static', filename = product_details[0][4]) }}" alt="">
+
+            </div>
+            <div class="grid2">
+                <pre>{{product_details[0][2]}}
+               
+            </pre>
+            </div>
+        </div>
+        <table>
+            <tr>
+                {% if cur_price == (()) %}
+                <th><span class="curr">Current bid :{{'0'}}</span></th>
+                {% else %}
+                <th><span class="curr">Current bid :{{cur_price[0][0]}}</span></th>
+                {% endif %}
+                <th><span class="date">Last date:{{product_details[0][3]}}</span></th>
+                <th><span class="pid">product ID :{{product_details[0][0]}}</span></th>
+                <th>
+                    <form method="POST">
+                        <input type="text" name="bid_amount" id="Bid price" placeholder="Enter Amount">
+                        <button id="Bid Now" type="submit" onclick="myfunction()" name="bid_now ">Bid now</button>
+                    </form>
+                </th>
+            </tr>
+        </table>
+    </div><br><br><br><br>
+    <a href="{{url_for('auction')}}">Back to Home</a>
+</body>
+<script>
+    function myfunction() {
+        alert("Bid submitted")
+    }
+</script>
+
+
+</html>

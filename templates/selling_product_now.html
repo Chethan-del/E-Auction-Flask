@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid image input</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .container {
+        border-radius: 30px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: max-content;
+        margin-top: 10px;
+        background-color: rgba(121, 90, 179, 0.911);
+        float: left;
+        margin-left: 30px;
+    }
+    
+    textarea {
+        width: 1000px;
+        height: 320px;
+        border-radius: 25px;
+        font-size: x-large;
+        font-weight: 700;
+        padding-top: 20px;
+        margin-left: 30px;
+        margin-top: 10px;
+        background-color: rgb(233, 233, 233);
+        padding-left: 10px;
+    }
+    
+    #date,
+    #price,
+    #name,
+    #cname {
+        border: 2px solid black;
+        background-color: rgb(233, 233, 233);
+        border-radius: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 15px;
+        width: 250px;
+        margin-left: 40px;
+        font-size: x-large;
+        font-weight: 700;
+    }
+    
+     ::placeholder {
+        text-align: center;
+    }
+    
+    .grid {
+        border: 2px solid black;
+        background-color: rgb(233, 233, 233);
+        border-radius: 25px;
+        margin: 10px;
+        padding: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .sellbutton {
+        padding: 15px;
+        width: 250px;
+        border-radius: 25px;
+        margin-right: 45%;
+        background-color: rgb(105, 0, 211);
+        font-size: larger;
+        color: white;
+        margin-top: 60px;
+        float: right;
+    }
+    
+    label {
+        font-size: 30px;
+        text-align: center;
+        padding-left: 110px;
+    }
+    
+    .IMG {
+        height: 260px;
+        width: 260px;
+        border: 1px dotted black;
+    }
+    
+    h3 {
+        text-align: center;
+        font-size: xx-large;
+    }
+    
+    a {
+        text-decoration: none;
+        color: aliceblue;
+    }
+    
+    select {
+        border: 2px solid black;
+        background-color: rgb(233, 233, 233);
+        border-radius: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 15px;
+        width: 300px;
+        margin-left: 40px;
+        font-size: x-large;
+        font-weight: 700;
+    }
+    
+    form {
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: rgba(121, 90, 179, 0.911);
+        box-shadow: 10px 10px rgba(81, 54, 131, 0.911);
+        width: 1500px;
+        margin-left: auto;
+        margin-right: auto
+    }
+</style>
+
+<body>
+    <h3>>>>>>>>> Enter Your product details
+        <<<<<<<<</h3>
+            <form method="POST" enctype="multipart/form-data">
+                <input id="name" type="text" placeholder="Enter product name" name="name" required>
+
+                <select name="category" id="cname">
+            <option>Category</option>
+            <option value="Digital-Art">Digital-Art </option>
+            <option value="Book">Book</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Home Appliances">Home Appliances</option>
+          </select>
+                <input id="price" type="text" placeholder="Enter your selling price" name="price" required>
+
+                <input id="date" type="date" name="date" required><span style="font-size: x-large;margin-left: 5PX;">Last auction date</span>
+
+                <span class="container">
+            <div class="grid">
+                <label for="Img_file"><i class="fa fa-cloud-upload"></i></label>
+                <input type="file" name='u_img' id="Img_file" hidden="hidden" accept="image/*" onchange="loadFile(event)">
+                <div><img class="IMG" name='u_img' id="product_img"></div>
+            </div>
+            
+        </span>
+                <div>
+                    <textarea placeholder="Description of the product" name="description"></textarea>
+                    <br><br>
+                    <div><a href="{{url_for('accounts')}}"><button class="sellbutton" type="submit" value="Sell Now" name = "Sell Now">Sell Now</button></a>
+                    </div>
+                </div>
+            </form>
+</body>
+<script>
+    var loadFile = function(event) {
+        var image = document.getElementById('product_img');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }; // This is the preview function that shows the uploaded image.
+    var date = new Date();
+    var tdate = date.getDate() + 1; //This gives the next day.
+    var tmonth = date.getMonth() + 1; // This gives the current month.
+    var cyear = date.getUTCFullYear(); //This gives the current year.
+    if (tmonth < 10) {
+        tmonth = "0" + tmonth;
+    }
+    if (tdate < 10) {
+        tdate = "0" + tdate;
+    }
+    var mindate = cyear + "-" + tmonth + "-" + tdate; //This is the format.
+    document.getElementById("date").setAttribute('min', mindate) //This is to set the min attribute with required format.
+</script>
+
+</html>

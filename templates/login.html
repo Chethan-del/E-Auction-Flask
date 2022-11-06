@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<style>
+    form {
+        margin-left: auto;
+        margin-right: auto;
+        position: center;
+        border: 2px solid black;
+        text-align: center;
+        border-radius: 50px;
+        padding: 20px;
+        font-size: 18px;
+        background-color: white;
+        max-width: 500px;
+        height: auto;
+        align-content: center;
+        background-color: rgba(121, 90, 179, 0.911);
+        box-shadow: 10px 10px rgba(81, 54, 131, 0.911);
+    }
+    
+    a:link,
+    a:visited {
+        color: black;
+        background-color: white;
+        Text-align: center;
+        border: 2px solid black;
+        margin: 20px;
+        width: 100%;
+        padding: 15px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+    }
+    
+    a:hover,
+    .login:hover {
+        color: black;
+        background-color: rgb(208, 178, 211);
+        text-decoration: none;
+        /* font-size: 18px; */
+        /* width: 300px; */
+    }
+    
+    .login {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        width: 50%;
+        color: linear-gradient(45deg, #8f3283, #7008ac);
+        padding: 15px;
+        border-radius: 25px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        outline: 0;
+    }
+    
+    .un {
+        font-family: "Roboto", sans-serif;
+        width: 80%;
+        padding: 15px;
+        border-radius: 25px;
+        background-color: #b3b3b3;
+        font-size: 15px;
+    }
+    
+    .pw {
+        width: 80%;
+        padding: 15px;
+        border-radius: 25px;
+        background-color: #b3b3b3;
+        font-size: 12px;
+    }
+    
+    input {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1 style="text-align: center;">>>>>>>>> Welcome back!
+        <<<<<<<<</h1>
+            <form method="POST">
+                <h1>Login</h1>
+                <label for="Username">Username</label><br>
+                <input class="un" type="text" id="Username" placeholder="username" name="mail" required><br><br>
+                <label for="Password">Password:</label><br>
+                <input class="pw" type="password" id="Password" placeholder="password" name="password" required><br><br> {% if search == 0 %}
+                <input class="login" type="submit" onclick="myfunction()" value="login"><br/><br/><br> {% else %}
+                <input class="login" type="submit" value="login"><br/><br/><br> {% endif %}
+                <a href="{{url_for('home')}}">Cancel</a>
+            </form>
+            <script>
+                function myfunction() {
+                    alert("Incorect Credentials")
+
+                }
+            </script>
+</body>
+
+</html>

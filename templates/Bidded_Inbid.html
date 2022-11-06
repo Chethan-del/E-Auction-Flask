@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Biddings</title>
+</head>
+<style>
+    table {
+        width: 1000px;
+        border: 2px solid black;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+        padding: 10px;
+        border-radius: 25px;
+        background-color: rgba(121, 90, 179, 0.911);
+        box-shadow: 10px 10px rgba(81, 54, 131, 0.911);
+    }
+    
+    th {
+        text-align: center;
+    }
+    
+    td {
+        width: 500px;
+        border: 3px solid black;
+        margin: 0 auto;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 9px;
+        background-color: white;
+        text-align: center;
+    }
+    
+    .back {
+        border: 2px solid black;
+        text-decoration: none;
+        font-size: 18px;
+        background-color: rgb(105, 0, 211);
+        width: 10%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 10px;
+        border-radius: 25px;
+    }
+    
+    .back:hover {
+        background-color: rgb(208, 178, 211);
+        color: black;
+    }
+</style>
+
+<body>
+    <h1 style="text-align: center;">>>>>>>>>Bidding
+        <<<<<<<<</h1>
+            <table>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Your Bid</th>
+                    <th>View</th>
+                </tr>
+                {% for row in bid %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td><a href="{{url_for('product_view', id =row[0])}}">click here</a></td>
+                </tr>
+                {% endfor %}
+            </table><br><br>
+            <div class="back">
+                <a href="{{url_for('accounts')}}" style="color: white;text-decoration: none;">Back to Account</a>
+            </div>
+</body>
+
+</html>
